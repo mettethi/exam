@@ -6,13 +6,15 @@ using System.Web;
 
 namespace exam.Models
 {
-    abstract class User
+    public enum UserType { Teacher, Student }
+
+    public abstract class User
     {
-        [Key]
-        protected int UserId { get; set; }
-        protected string Name { get; set; }
-        protected string Email { get; set; }
-        protected string Password { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public UserType UserType { get; set; }
 
         public abstract void AddUser();
         public abstract void EditUser();

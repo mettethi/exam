@@ -7,9 +7,10 @@ using System.Web;
 
 namespace exam.DAL
 {
-    class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
-        public DbSet<User> Students { get; set; }
-        public DbSet<User> Teachers { get; set; }
+        public DbSet<User> Users { get; set; }
+
+
     }
 }
