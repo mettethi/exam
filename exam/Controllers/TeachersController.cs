@@ -56,10 +56,10 @@ namespace exam.Controllers
                 user.UserType = UserType.Teacher;
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index"); //redirect tilbage til index
             }
 
-            return View(user);
+            return View(user); 
         }
 
         // GET: Teachers/Edit/5
@@ -94,7 +94,9 @@ namespace exam.Controllers
             return View(user);
         }
 
-        // GET: Teachers/Delete/5
+        //HVORDAN HÅNDTERE VI DELETE?
+
+        // GET: Teachers/Delete/5    
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +108,7 @@ namespace exam.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(user); // REDIRECT TIL INDEX
         }
 
         // POST: Teachers/Delete/5

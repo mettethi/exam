@@ -13,7 +13,29 @@ namespace exam.Controllers
 {
     public class StudentsController : Controller
     {
-        private ApplicationContext db = new ApplicationContext();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*private ApplicationContext db = new ApplicationContext();
 
         // GET: Students
         public ActionResult Index()
@@ -125,6 +147,6 @@ namespace exam.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }

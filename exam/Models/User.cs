@@ -8,7 +8,7 @@ namespace exam.Models
 {
     public enum UserType { Teacher, Student }
 
-    public abstract class User
+    public class User
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -16,9 +16,9 @@ namespace exam.Models
         public string Password { get; set; }
         public UserType UserType { get; set; }
 
-        public abstract void AddUser();
+       /* public abstract void AddUser();
         public abstract void EditUser();
-        public abstract void DeleteUser();
+        public abstract void DeleteUser();*/
 
     }
 
