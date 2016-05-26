@@ -1,6 +1,6 @@
 ﻿<h1>Students</h1>
 
-<button type="button" class="btn btn-success addStudentBtn">@Html.ActionLink("Create new student", "Create")</button>
+<button type="button" class="btn btn-success" onclick="createStudent()">Create New Student</button>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -25,4 +25,11 @@
         </tr>
     </tbody>
 </table>
+
+<script>
+    function createStudent()
+    {
+           <!-- @Html.Action("Create") -->
+    }
+</script>
 
