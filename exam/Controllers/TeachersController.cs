@@ -132,5 +132,10 @@ namespace exam.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult studentPartial()
+        {
+            return PartialView("_StudentPartial");
+        }
     }
 }
