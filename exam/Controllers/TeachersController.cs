@@ -19,6 +19,7 @@ namespace exam.Controllers
         public ActionResult Index()
         {
             return View();
+
             //return View(db.Users.ToList());
         }
 
@@ -54,7 +55,16 @@ namespace exam.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.UserType = UserType.Teacher;
+               /* if(user.UserType == 0)
+                {
+                    user.UserType = UserType.Teacher;
+                }
+                else if(user.UserType == 1)
+                {
+                    user.UserType = UserType.Student;
+                }*/
+
+                //user.UserType = UserType.Teacher;
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index"); //redirect tilbage til index
@@ -135,7 +145,8 @@ namespace exam.Controllers
 
         public ActionResult studentPartial()
         {
-            return PartialView("_StudentPartial");
+            List<User> users = db.Users.ToList();
+            return PartialView("_StudentPartial", users);
         }
 
         public ActionResult createStudentPartial()
