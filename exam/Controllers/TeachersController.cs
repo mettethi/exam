@@ -18,7 +18,8 @@ namespace exam.Controllers
         // GET: Teachers
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View();
+            //return View(db.Users.ToList());
         }
 
         // GET: Teachers/Details/5
