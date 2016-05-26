@@ -137,5 +137,10 @@ namespace exam.Controllers
         {
             return PartialView("_StudentPartial");
         }
+
+        public ActionResult createStudentPartial()
+        {
+            return PartialView("_CreateStudentPartial");
+        }
     }
 }

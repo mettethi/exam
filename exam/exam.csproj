@@ -273,6 +273,7 @@
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Shared\_StudentPartial.cshtml" />
+    <Content Include="Views\Shared\_CreateStudentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
