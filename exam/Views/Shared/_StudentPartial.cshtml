@@ -1,6 +1,9 @@
-﻿<h1>Students</h1>
+﻿@model IEnumerable<exam.Models.User>
 
-<button type="button" class="btn btn-success" onclick="createStudent()">Create New Student</button>
+<h1>Students</h1>
+
+<button type="button" class="btn btn-success addStudentBtn">@Html.ActionLink("Create new student", "Create")</button>
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -8,28 +11,19 @@
             <th>Name</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Usertype</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>5</td>
-            <td>Met Thi</td>
-            <td>john@example.com</td>
-            <td>1234</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Lisa Olesen</td>
-            <td>lisa@example.com</td>
-            <td>123</td>
-        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.ID</td>
+                <td>@s.Name</td>
+                <td>@s.Email</td>
+                <td>@s.Password</td>
+                <td>@s.UserType</td>
+           </tr>
+        }
     </tbody>
 </table>
-
-<script>
-    function createStudent()
-    {
-           <!-- @Html.Action("Create") -->
-    }
-</script>
-
