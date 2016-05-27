@@ -282,6 +282,8 @@
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Shared\_StudentPartial.cshtml" />
     <Content Include="Views\Shared\_CreateStudentPartial.cshtml" />
+    <Content Include="Views\Teachers\Delete.cshtml" />
+    <Content Include="Views\Shared\_StudentDetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

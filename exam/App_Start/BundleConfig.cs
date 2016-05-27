@@ -25,8 +25,7 @@ namespace exam
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/font-awesome.css")); //font awesome i content: Install-Package FontAwesome 
+                      "~/Content/site.css"));
         }
     }
 }
