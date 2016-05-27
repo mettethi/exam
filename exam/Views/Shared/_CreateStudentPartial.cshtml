@@ -1,6 +1,6 @@
 ﻿@model exam.Models.User
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("create", "teachers")) 
 {
     @Html.AntiForgeryToken()
     
