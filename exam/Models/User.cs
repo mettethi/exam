@@ -6,7 +6,7 @@ using System.Web;
 
 namespace exam.Models
 {
-    public enum UserType { Teacher, Student }
+    public enum UserType { Teacher , Student  }
 
     public class User
     {
@@ -14,6 +14,7 @@ namespace exam.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+      
         public UserType UserType { get; set; }
 
        /* public abstract void AddUser();

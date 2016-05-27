@@ -35,7 +35,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.UserType, htmlAttributes: new { @class = "form-control" })
+             @*   @Html.EnumDropDownListFor(model => model.UserType, "Select a User Type", htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownList("UserType",(ViewBag.UserType as SelectList), htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
             </div>
         </div>

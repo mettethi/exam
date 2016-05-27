@@ -37,6 +37,7 @@ namespace exam.Controllers
             {
                 return HttpNotFound();
             }
+          
             return View(user);
         }
 
@@ -97,7 +98,7 @@ namespace exam.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.UserType = UserType.Teacher;
+            //    user.UserType = UserType.Teacher;
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -150,10 +151,10 @@ namespace exam.Controllers
 
         public ActionResult CreateStudentPartial()
         {
+            ViewBag.UserType = new SelectList(Enum.GetValues(typeof(UserType)), UserType.Student);
             return PartialView("_CreateStudentPartial");
         }
 
-        // Jeg har tilføjet denne
         public ActionResult StudentDetailsPartial(int id) //catch the id to Model binding
         {
             User users = db.Users.Find(id);
