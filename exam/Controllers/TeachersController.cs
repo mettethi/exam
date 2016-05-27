@@ -55,14 +55,14 @@ namespace exam.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(user.UserType == 0)
+                /*if(user.UserType == 0)
                 {
                     user.UserType = UserType.Teacher;
                 }
-                else if(user.UserType == 1)
+                else if(user.UserType = 1)
                 {
                     user.UserType = UserType.Student;
-                }
+                }*/
 
                 //user.UserType = UserType.Teacher;
                 db.Users.Add(user);
