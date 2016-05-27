@@ -5,6 +5,8 @@
 <hr />
 <div id="studentDetails"></div>
 <div id="studentCreate"></div>
+<div id="studentEdit"></div>
+<div id="studentDelete"></div>
 
 <!--delete all this ajax stuff if we not are going to use it - just do a regular actionLink-->
 @Ajax.ActionLink("Create New", "CreateStudentPartial", new AjaxOptions
@@ -47,15 +49,23 @@
 
                 <button clas="btn btn-default">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
-                    @Html.ActionLink("Edit", "", new { id = s.ID })
+                    @Ajax.ActionLink("Edit", "Edit", new { id = s.ID }, new AjaxOptions
+                    {
+                        UpdateTargetId = "studentEdit",
+                        InsertionMode = InsertionMode.Replace
+                    })
                 </button>
 
                 <button clas="btn btn-default">
                     <i class="fa fa-trash" aria-hidden="true"></i>
-                    @Html.ActionLink("Delete", "", new { id = s.ID })
+                    @Ajax.ActionLink("Delete", "Delete", new { id = s.ID }, new AjaxOptions
+                        {
+                            UpdateTargetId = "studentDelete",
+                            InsertionMode = InsertionMode.Replace
+                        })
                 </button>
 
-            </td>
+</td>
         </tr>
         }
     </tbody>
