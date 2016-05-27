@@ -1,8 +1,18 @@
 ﻿@model IEnumerable<exam.Models.User>
 
-<h1>Students</h1>
+<h2>Students</h2>
 
-<button type="button" class="btn btn-success" onclick="createStudent()">Create New Student</button>
+<hr />
+<div id="studentDetails"></div>
+<div id="studentCreate"></div>
+
+<!--delete all this ajax stuff if we not are going to use it - just do a regular actionLink-->
+@Ajax.ActionLink("Create New", "Create", new AjaxOptions
+   {
+       UpdateTargetId = "studentCreate",
+       InsertionMode = InsertionMode.Replace
+   })
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -11,17 +21,41 @@
             <th>Email</th>
             <th>Password</th>
             <th>Usertype</th>
+            <th> </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var s in Model)
         {
         <tr>
-                <td>@s.ID</td>
-                <td>@s.Name</td>
-                <td>@s.Email</td>
-                <td>@s.Password</td>
-                <td>@s.UserType</td>
+            <td>@s.ID</td>
+            <td>@s.Name</td>
+            <td>@s.Email</td>
+            <td>@s.Password</td>
+            <td>@s.UserType</td>
+            <td>
+
+                <!-- Vi bør slette ajax delen og bare gøre brug af almindelig actionLink hvis ikke vi får ajax til at virke-->
+                <!-- Jeg er tilføjet denne - har forsøgt at ændre Details til StudentDetailsPartial men virker ikke  -->
+                <button class="btn btn-default">
+                    @Ajax.ActionLink("Details", "Details", new { id = s.ID }, new AjaxOptions
+                   {
+                       UpdateTargetId = "studentDetails",
+                       InsertionMode = InsertionMode.Replace
+                   })
+                </button>
+
+                <button clas="btn btn-default">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    @Html.ActionLink("Edit", "", new { id = s.ID })
+                </button>
+
+                <button clas="btn btn-default">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    @Html.ActionLink("Delete", "", new { id = s.ID })
+                </button>
+
+</td>
         </tr>
         }
     </tbody>

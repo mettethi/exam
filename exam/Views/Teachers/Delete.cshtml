@@ -1,13 +1,7 @@
 ﻿@model exam.Models.User
-
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Details</h2>
-
-<div>
-
+<h2>Delete</h2>
+<h3>Are you sure you want to delete this?</h3>
+<div class="form-horizontal">
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -44,7 +38,17 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+
+    }
+<br />
+<div>
     @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+

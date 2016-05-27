@@ -127,7 +127,6 @@ namespace exam.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-
             User user = db.Users.Find(id);
             db.Users.Remove(user);
             db.SaveChanges();
@@ -149,9 +148,16 @@ namespace exam.Controllers
             return PartialView("_StudentPartial", users);
         }
 
-        public ActionResult createStudentPartial()
+        public ActionResult CreateStudentPartial()
         {
             return PartialView("_CreateStudentPartial");
+        }
+
+        // Jeg har tilføjet denne
+        public ActionResult StudentDetailsPartial(int id) //catch the id to Model binding
+        {
+            User users = db.Users.Find(id);
+            return PartialView("_StudentDetailsPartial", users);
         }
     }
 }
