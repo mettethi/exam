@@ -5,14 +5,15 @@ namespace exam.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<exam.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<exam.DAL.ApplicationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "exam.DAL.ApplicationContext";
         }
 
-        protected override void Seed(exam.Models.ApplicationDbContext context)
+        protected override void Seed(exam.DAL.ApplicationContext context)
         {
             //  This method will be called after migrating to the latest version.
 

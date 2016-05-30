@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssignmentsController.cs" />
+    <Compile Include="Controllers\HelplistsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
@@ -204,9 +205,37 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605271010543_first.cs" />
-    <Compile Include="Migrations\201605271010543_first.Designer.cs">
-      <DependentUpon>201605271010543_first.cs</DependentUpon>
+    <Compile Include="Migrations\201605260852244_InitialCreate.cs" />
+    <Compile Include="Migrations\201605260852244_InitialCreate.Designer.cs">
+      <DependentUpon>201605260852244_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300824002_Initial.cs" />
+    <Compile Include="Migrations\201605300824002_Initial.Designer.cs">
+      <DependentUpon>201605300824002_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300856541_addedModelAss.cs" />
+    <Compile Include="Migrations\201605300856541_addedModelAss.Designer.cs">
+      <DependentUpon>201605300856541_addedModelAss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300945453_test.cs" />
+    <Compile Include="Migrations\201605300945453_test.Designer.cs">
+      <DependentUpon>201605300945453_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605301030597_Helplist.cs" />
+    <Compile Include="Migrations\201605301030597_Helplist.Designer.cs">
+      <DependentUpon>201605301030597_Helplist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605301034194_test1.cs" />
+    <Compile Include="Migrations\201605301034194_test1.Designer.cs">
+      <DependentUpon>201605301034194_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605301125560_test2.cs" />
+    <Compile Include="Migrations\201605301125560_test2.Designer.cs">
+      <DependentUpon>201605301125560_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605301234266_editedHelplist.cs" />
+    <Compile Include="Migrations\201605301234266_editedHelplist.Designer.cs">
+      <DependentUpon>201605301234266_editedHelplist.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201605271704212_testing.cs" />
     <Compile Include="Migrations\201605271704212_testing.Designer.cs">
@@ -215,6 +244,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\Helplist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\keyAttribute.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -302,6 +332,13 @@
     <Content Include="Views\Assignments\Details.cshtml" />
     <Content Include="Views\Assignments\Edit.cshtml" />
     <Content Include="Views\Assignments\Index.cshtml" />
+    <Content Include="Views\Shared\_CreateAssignmentPartial.cshtml" />
+    <Content Include="Views\Shared\_AssignmentPartial.cshtml" />
+    <Content Include="Views\Helplists\Create.cshtml" />
+    <Content Include="Views\Helplists\Delete.cshtml" />
+    <Content Include="Views\Helplists\Details.cshtml" />
+    <Content Include="Views\Helplists\Edit.cshtml" />
+    <Content Include="Views\Helplists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,8 +352,29 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605271010543_first.resx">
-      <DependentUpon>201605271010543_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605260852244_InitialCreate.resx">
+      <DependentUpon>201605260852244_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300824002_Initial.resx">
+      <DependentUpon>201605300824002_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300856541_addedModelAss.resx">
+      <DependentUpon>201605300856541_addedModelAss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300945453_test.resx">
+      <DependentUpon>201605300945453_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605301030597_Helplist.resx">
+      <DependentUpon>201605301030597_Helplist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605301034194_test1.resx">
+      <DependentUpon>201605301034194_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605301125560_test2.resx">
+      <DependentUpon>201605301125560_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605301234266_editedHelplist.resx">
+      <DependentUpon>201605301234266_editedHelplist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605271704212_testing.resx">
       <DependentUpon>201605271704212_testing.cs</DependentUpon>
