@@ -335,6 +335,8 @@
     <Content Include="Views\Helplists\Details.cshtml" />
     <Content Include="Views\Helplists\Edit.cshtml" />
     <Content Include="Views\Helplists\Index.cshtml" />
+    <Content Include="Views\Shared\_HelplistPartial.cshtml" />
+    <Content Include="Views\Shared\_CreateHelplistPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

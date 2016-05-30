@@ -18,7 +18,8 @@ namespace exam.Controllers
         // GET: Helplists
         public ActionResult Index()
         {
-            return View(db.Helplist.ToList());
+            // return View(db.Helplist.ToList());
+            return View();
         }
 
         // GET: Helplists/Details/5
@@ -47,7 +48,7 @@ namespace exam.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Helped")] Helplist helplist)
+        public ActionResult Create([Bind(Include = "ID, User, Assignment, Helped")] Helplist helplist)
         {
             if (ModelState.IsValid)
             {
@@ -123,6 +124,17 @@ namespace exam.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult HelplistPartial()
+        {
+            List<Helplist> helplists = db.Helplist.ToList();
+            return PartialView("_HelplistPartial", helplists);
+        }
+
+        public ActionResult CreateHelplistPartial()
+        {
+            return PartialView("_CreateHelplistPartial");
         }
     }
 }
