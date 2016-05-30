@@ -237,6 +237,10 @@
     <Compile Include="Migrations\201605301234266_editedHelplist.Designer.cs">
       <DependentUpon>201605301234266_editedHelplist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605271704212_testing.cs" />
+    <Compile Include="Migrations\201605271704212_testing.Designer.cs">
+      <DependentUpon>201605271704212_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignment.cs" />
@@ -373,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605301234266_editedHelplist.resx">
       <DependentUpon>201605301234266_editedHelplist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605271704212_testing.resx">
+      <DependentUpon>201605271704212_testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
