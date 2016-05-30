@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using exam.DAL;
 using exam.Models;
-
+/*
 namespace exam.Controllers
 {
     public class AssignmentsController : Controller
@@ -128,3 +128,4 @@ namespace exam.Controllers
         }
     }
 }
+*/
