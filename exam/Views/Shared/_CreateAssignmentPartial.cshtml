@@ -1,6 +1,6 @@
 ﻿@model exam.Models.Assignment
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("create", "assignments")) //VIGTIGT 
 {
     @Html.AntiForgeryToken()
     

@@ -11,6 +11,7 @@ namespace exam.DAL
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Helplist> Helplist { get; set; }
         
         //public System.Data.Entity.DbSet<exam.Models.Assignment> Assignments { get; set; }
     }
