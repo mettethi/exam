@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using exam.DAL;
 using exam.Models;
-/*
+
 namespace exam.Controllers
 {
     public class AssignmentsController : Controller
@@ -58,7 +58,7 @@ namespace exam.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(assignment);
+            return View(assignment); //erstat mend fejlbesked
         }
 
         // GET: Assignments/Edit/5
@@ -126,6 +126,16 @@ namespace exam.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult AssignmentPartial()
+        {
+            List<Assignment> assignments = db.Assignments.ToList();
+            return PartialView("_AssignmentPartial", assignments);
+        }
+
+        public ActionResult CreateAssignmentPartial()
+        {
+            return PartialView("_CreateAssignmentPartial");
+        }
     }
 }
-*/

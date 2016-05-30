@@ -1,0 +1,67 @@
+﻿@model IEnumerable<exam.Models.Assignment>
+
+<h2>Assignments</h2>
+
+<div id="assignmentCreate"></div>
+<div id="assignmentDetails"></div>
+<div id="assignmentEdit"></div>
+<div id="assignmentDelete"></div>
+
+
+
+    @Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
+    {
+        UpdateTargetId = "assignmentCreate",
+        InsertionMode = InsertionMode.Replace
+    })
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> @*Html.DisplayNameFor(model => model.Title)*@ Id </th>
+            <th> Title </th>
+            <th> Description </th>
+            <th> </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.ID</td>
+                <td>@a.Title</td>
+                <td>@a.Description</td>
+                <td>
+                    <button class="btn btn-default">
+                        @Ajax.ActionLink("Details", "Details", new { id = a.ID }, new AjaxOptions
+                        {
+                            UpdateTargetId = "assignmentDetails",
+                            InsertionMode = InsertionMode.Replace
+                        })
+                    </button>
+
+                    <button class="btn btn-default">
+                        
+                        @Ajax.ActionLink("Edit", "Edit", new { id = a.ID }, new AjaxOptions
+                        {
+                            UpdateTargetId = "assignmentEdit",
+                            InsertionMode = InsertionMode.Replace
+                        })
+                    </button>
+
+                    <button class="btn btn-default">
+
+                        @Ajax.ActionLink("Delete", "Delete", new { id = a.ID }, new AjaxOptions
+                        {
+                            UpdateTargetId = "assignmentDelete",
+                            InsertionMode = InsertionMode.Replace
+                        })
+                    </button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

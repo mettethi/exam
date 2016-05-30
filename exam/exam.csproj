@@ -204,9 +204,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605271010543_first.cs" />
-    <Compile Include="Migrations\201605271010543_first.Designer.cs">
-      <DependentUpon>201605271010543_first.cs</DependentUpon>
+    <Compile Include="Migrations\201605260852244_InitialCreate.cs" />
+    <Compile Include="Migrations\201605260852244_InitialCreate.Designer.cs">
+      <DependentUpon>201605260852244_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300824002_Initial.cs" />
+    <Compile Include="Migrations\201605300824002_Initial.Designer.cs">
+      <DependentUpon>201605300824002_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300856541_addedModelAss.cs" />
+    <Compile Include="Migrations\201605300856541_addedModelAss.Designer.cs">
+      <DependentUpon>201605300856541_addedModelAss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300945453_test.cs" />
+    <Compile Include="Migrations\201605300945453_test.Designer.cs">
+      <DependentUpon>201605300945453_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,6 +310,8 @@
     <Content Include="Views\Assignments\Details.cshtml" />
     <Content Include="Views\Assignments\Edit.cshtml" />
     <Content Include="Views\Assignments\Index.cshtml" />
+    <Content Include="Views\Shared\_CreateAssignmentPartial.cshtml" />
+    <Content Include="Views\Shared\_AssignmentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,8 +325,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605271010543_first.resx">
-      <DependentUpon>201605271010543_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605260852244_InitialCreate.resx">
+      <DependentUpon>201605260852244_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300824002_Initial.resx">
+      <DependentUpon>201605300824002_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300856541_addedModelAss.resx">
+      <DependentUpon>201605300856541_addedModelAss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300945453_test.resx">
+      <DependentUpon>201605300945453_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
