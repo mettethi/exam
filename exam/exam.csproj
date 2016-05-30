@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201605271010543_first.Designer.cs">
       <DependentUpon>201605271010543_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605271704212_testing.cs" />
+    <Compile Include="Migrations\201605271704212_testing.Designer.cs">
+      <DependentUpon>201605271704212_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignment.cs" />
@@ -313,6 +317,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605271010543_first.resx">
       <DependentUpon>201605271010543_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605271704212_testing.resx">
+      <DependentUpon>201605271704212_testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
