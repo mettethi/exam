@@ -23,7 +23,7 @@ namespace exam.Controllers
         }
 
         // GET: Helplists/Details/5
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -43,12 +43,13 @@ namespace exam.Controllers
             return View();
         }
 
+        //Add to helplist button: 
         // POST: Helplists/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID, User, Assignment, Helped")] Helplist helplist)
+        public ActionResult AddToHelplist([Bind(Include = "ID, User, Assignment, Helped")] Helplist helplist)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +93,8 @@ namespace exam.Controllers
         }
 
         // GET: Helplists/Delete/5
-        public ActionResult Delete(int? id)
+        //ADMIN
+        */public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -107,6 +109,7 @@ namespace exam.Controllers
         }
 
         // POST: Helplists/Delete/5
+        //ADMIN
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -116,6 +119,7 @@ namespace exam.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
 
         protected override void Dispose(bool disposing)
         {
@@ -126,15 +130,16 @@ namespace exam.Controllers
             base.Dispose(disposing);
         }
 
+        //ADMIN "Index"
         public ActionResult HelplistPartial()
         {
             List<Helplist> helplists = db.Helplist.ToList();
             return PartialView("_HelplistPartial", helplists);
         }
 
-        public ActionResult CreateHelplistPartial()
+        /*public ActionResult CreateHelplistPartial()
         {
             return PartialView("_CreateHelplistPartial");
-        }
+        }*/
     }
 }
