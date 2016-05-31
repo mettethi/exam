@@ -10,7 +10,6 @@ namespace exam.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "exam.DAL.ApplicationContext";
         }
 
         protected override void Seed(exam.DAL.ApplicationContext context)
