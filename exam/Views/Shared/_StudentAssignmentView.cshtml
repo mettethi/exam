@@ -1,0 +1,96 @@
+﻿@*@model IEnumerable<exam.Models.Assignment> *@
+@model exam.ViewModels.StudentViewModel
+
+<h2>Assignments</h2>
+
+<div id="assignmentCreate"></div>
+<div id="assignmentDetails"></div>
+<div id="assignmentEdit"></div>
+<div id="assignmentDelete"></div>
+
+
+
+@Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
+{
+    UpdateTargetId = "assignmentCreate",
+    InsertionMode = InsertionMode.Replace
+})
+
+<button class="btn btn-default" id="helpBtn">HELP</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th> @*Html.DisplayNameFor(model => model.Title)*@ Id </th>
+            <th> Title </th>
+            <th> Description </th>
+            <th> Start </th>
+            <th> </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Assignments)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                @Html.RadioButton("Start", "")
+            </td>
+            <td>
+                <button class="btn btn-default hideData" value="@item.ID">Done</button>
+            </td>
+
+        </tr>
+        }
+       
+    </tbody>
+</table>
+
+@*@Html.DisplayFor(m => m.User.Name)
+
+@foreach (var item in Model.Assignments)
+{
+    @Html.DisplayFor(m => item.Title)
+}*@
+
+<p id="user">@Html.DisplayFor(m => m.User.ID)</p>
+
+@Html.HiddenFor(m => m.User.ID)
+
+
+
+@section scripts
+{   
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script> 
+    <script src="~/Scripts/StudentAssignmentJs.js"></script>
+
+    <script>
+
+        var helplistHub = $.connection.helplistHub;
+
+        $.connection.hub.start().done(function ()
+        {
+            console.log("signalR started");
+        });
+
+        helplistHub.client.hello = function ()
+        {
+            console.log("Hello from the server");
+        }
+
+
+
+        $("#helpBtn").click(function () {
+
+            var theUser = $("#User_ID").val();
+            console.log(theUser);
+
+           helplistHub.server.addToHelplist(theUser);
+
+        });
+
+    </script>
+}

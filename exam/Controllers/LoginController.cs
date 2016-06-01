@@ -1,5 +1,6 @@
 ﻿using exam.DAL;
 using exam.Models;
+using exam.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace exam.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-          
+            List<Helplist> helplists = db.Helplist.ToList();
+            List<Assignment> assignments = db.Assignments.ToList();
 
             User user = db.Users.Where(i => i.Email == email && i.Password == password).FirstOrDefault();
             if (user == null)
@@ -33,12 +35,23 @@ namespace exam.Controllers
             {
                 if (user.UserType == UserType.Teacher)
                 {
-                    return View("_CreateAssignmentPartial");
+                    return View("_HelplistPartial", helplists);
                 }
-                /*else if (user.UserType == UserType.Student)
+                else if (user.UserType == UserType.Student)
                 {
-                    return View student 
-                }*/
+                    //save data in sessin (user id)
+                    Session["student"] = user;
+                    User foundUser = (User)Session["student"];
+
+                    var studentViewModel = new StudentViewModel();
+
+                    studentViewModel.User = foundUser;
+                    studentViewModel.Assignments = assignments;
+
+                    return View("_StudentAssignmentView", studentViewModel);
+
+                    //return View("_StudentAssignmentView", assignments); 
+                }
             }
 
             return View();
