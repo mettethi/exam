@@ -1,0 +1,52 @@
+﻿@model IEnumerable<exam.Models.Helplist>
+
+<h2>Helplist partialview</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>Assignment title</th>
+            <th>Helped</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var h in Model)
+        {
+            <tr>
+                <td>@h.User.Name</td>
+                <td>@h.Assignment.Title</td>
+                <td>@h.Helped</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = h.ID })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+<script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+<script src="~/signalr/hubs"></script>
+<script src="~/Scripts/StudentAssignmentJs.js"></script>
+
+    <script>
+        var helplistHub = $.connection.helplistHub;
+
+        $.connection.hub.start().done(function () {
+            console.log("signalR started");
+        });
+
+        helplistHub.client.getHelplist = function (user) {
+            console.log(user);
+        }
+
+        /*helplistHub.client.getHelplist = function (user, assignment)
+        {
+            console.log(user);
+        }*/
+
+    </script>
+}
+
+
