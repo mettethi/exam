@@ -8,8 +8,7 @@
 <div id="studentEdit"></div>
 <div id="studentDelete"></div>
 
-<!--delete all this ajax stuff if we not are going to use it - just do a regular actionLink-->
-@Ajax.ActionLink("Create New", "CreateStudentPartial", new AjaxOptions
+@Ajax.ActionLink("Create New Student", "CreateStudentPartial", new AjaxOptions
    {
        UpdateTargetId = "studentCreate",
        InsertionMode = InsertionMode.Replace
@@ -37,33 +36,33 @@
             <td>@s.UserType</td>
             <td>
 
-                <!-- Vi bør slette ajax delen og bare gøre brug af almindelig actionLink hvis ikke vi får ajax til at virke-->
-                <!-- Jeg er tilføjet denne - har forsøgt at ændre Details til StudentDetailsPartial men virker ikke  -->
-                <button class="btn btn-default">
-                    @Ajax.ActionLink("Details", "Details", new { id = s.ID }, new AjaxOptions
-                   {
-                       UpdateTargetId = "studentDetails",
-                       InsertionMode = InsertionMode.Replace
-                   })
-                </button>
 
-                <button clas="btn btn-default">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                    @Ajax.ActionLink("Edit", "Edit", new { id = s.ID }, new AjaxOptions
+            <button class="btn btn-default">
+                <i class="fa fa-info" aria-hidden="true"></i>
+                @Ajax.ActionLink("Details", "Details", new { id = s.ID }, new AjaxOptions
+                {
+                    UpdateTargetId = "studentDetails",
+                    InsertionMode = InsertionMode.Replace
+                })
+            </button>
+
+            <button class="btn btn-default">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                @Ajax.ActionLink("Edit", "Edit", new { id = s.ID }, new AjaxOptions
+                {
+                    UpdateTargetId = "studentEdit",
+                    InsertionMode = InsertionMode.Replace
+                })
+            </button>
+
+            <button class="btn btn-default">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                @Ajax.ActionLink("Delete", "Delete", new { id = s.ID }, new AjaxOptions
                     {
-                        UpdateTargetId = "studentEdit",
+                        UpdateTargetId = "studentDelete",
                         InsertionMode = InsertionMode.Replace
                     })
-                </button>
-
-                <button clas="btn btn-default">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    @Ajax.ActionLink("Delete", "Delete", new { id = s.ID }, new AjaxOptions
-                        {
-                            UpdateTargetId = "studentDelete",
-                            InsertionMode = InsertionMode.Replace
-                        })
-                </button>
+            </button>
 
 </td>
         </tr>
