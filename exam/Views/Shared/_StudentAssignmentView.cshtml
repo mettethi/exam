@@ -35,7 +35,7 @@
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>
-                @Html.RadioButton("Start", @item.ID)
+                @Html.RadioButton("Start", @item.ID, new { @class = "radioItem"})
             </td>
             <td>
                 <button class="btn btn-default done" id="done_@item.ID" value="@item.ID">Done</button>
@@ -57,6 +57,7 @@
 <p id="user">@Html.DisplayFor(m => m.User.ID)</p>
 
 @Html.HiddenFor(m => m.User.ID)
+
 
 
 
@@ -83,17 +84,9 @@
 
         $("#helpBtn").click(function ()
         {
-
             var theUser = $("#User_ID").val();
-            console.log(theUser);
 
-            if (document.getElementById('Start').checked) {
-                var assignmentId = document.getElementById('Start').value;
-                console.log("Id fetched");
-            }
-            else {
-                console.log("ERROR - NO CHECKED VALUE");
-            }
+            var assignmentId = $('input[name=Start]:checked').val();
 
             helplistHub.server.addToHelplist(theUser, assignmentId);
 
