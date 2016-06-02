@@ -20,7 +20,7 @@ namespace exam.Models
         public int AssignmentID { get; set; }
         public virtual Assignment Assignment { get; set; }
         
-        
+        public string Time { get; set; }
         
         /*public bool Helped { get; set; }
 

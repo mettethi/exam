@@ -1,17 +1,9 @@
-﻿@*@model IEnumerable<exam.Models.Assignment> *@
-@model exam.ViewModels.StudentViewModel
+﻿@model exam.ViewModels.StudentViewModel
 @{
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 
 <h3 class="userNameTxt"> Hi @Html.DisplayFor(m => m.User.Name)!</h3>
-
-
-@*@Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
-{
-    UpdateTargetId = "assignmentCreate",
-    InsertionMode = InsertionMode.Replace
-})*@
 
 <button class="btn btn-danger" id="helpBtn">I NEED HELP</button>
 <br />
@@ -19,7 +11,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th> @*Html.DisplayNameFor(model => model.Title)*@ Id </th>
+            <th> Id </th>
             <th> Title </th>
             <th> Description </th>
             <th> Start </th>
@@ -47,18 +39,7 @@
     </tbody>
 </table>
 
-@*@Html.DisplayFor(m => m.User.Name)
-
-@foreach (var item in Model.Assignments)
-{
-    @Html.DisplayFor(m => item.Title)
-}*@
-
-<p id="user">@Html.DisplayFor(m => m.User.ID)</p>
-
-@Html.HiddenFor(m => m.User.ID)
-
-
+<p id="user">@Html.HiddenFor(m => m.User.ID)</p>
 
 
 @section scripts
@@ -75,12 +56,6 @@
         {
             console.log("signalR started");
         });
-
-        helplistHub.client.hello = function ()
-        {
-            console.log("Hello from the server");
-        }
-
 
         $("#helpBtn").click(function ()
         {

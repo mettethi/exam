@@ -48,27 +48,15 @@ namespace exam.Controllers
         }
 
         // POST: Teachers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Email,Password,UserType")] User user)
         {
             if (ModelState.IsValid)
             {
-                //if(user.UserType == UserType.Student)
-                //{
-                //    user.UserType = UserType.Teacher;
-                //}
-                //else if(user.UserType == 1)
-                //{
-                //    user.UserType = UserType.Student;
-                //}
-
-                //user.UserType = UserType.Teacher;
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index"); //redirect tilbage til index
+                return RedirectToAction("Index"); 
             }
 
             return View(user); 

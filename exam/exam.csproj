@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201606021337551_addedFK.Designer.cs">
       <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606021647302_addedTimestamp.cs" />
+    <Compile Include="Migrations\201606021647302_addedTimestamp.Designer.cs">
+      <DependentUpon>201606021647302_addedTimestamp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Helplist.cs" />
@@ -272,6 +276,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -361,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606021337551_addedFK.resx">
       <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021647302_addedTimestamp.resx">
+      <DependentUpon>201606021647302_addedTimestamp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

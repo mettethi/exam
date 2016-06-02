@@ -39,7 +39,6 @@ namespace exam.Controllers
                 }
                 else if (user.UserType == UserType.Student)
                 {
-                    //save data in sessin (user id)
                     Session["student"] = user;
                     User foundUser = (User)Session["student"];
 
@@ -50,12 +49,10 @@ namespace exam.Controllers
 
                     return View("_StudentAssignmentView", studentViewModel);
 
-                    //return View("_StudentAssignmentView", assignments); 
                 }
             }
 
             return View();
-
         }
 
         public ActionResult Delete(int id)

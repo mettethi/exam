@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<exam.Models.Helplist>
 
-<h2>Helplist partialview</h2>
-
 <table class="table">
     <thead>
         <tr>
             <th>Name </th>
             <th>Assignment title</th>
+            <th>Time</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -16,6 +15,7 @@
             <tr>
                 <td>@h.User.Name</td>
                 <td>@h.Assignment.Title</td>
+                <td>@h.Time</td>
                 <td>@Html.ActionLink("Delete", "Delete", "Helplists", new { id = h.ID }, null)</td>
             </tr>
         }
@@ -36,11 +36,14 @@
             console.log("signalR started");
         });
 
-        helplistHub.client.getHelplist = function (user, assignment)
+        helplistHub.client.getHelplist = function (user, assignment, timeNow)
         {
-            //append data
-            var deleteString = '@Html.ActionLink("Delete", "Delete")'; //dont work - need id og the helplist-object
-            var htmlString = "<tr><td>" + user.Name + "</td><td>" + assignment.Title + "</td><td>" + deleteString + "</td></tr>";
+            var assignmentId = assignment.ID;
+
+            var deleteString = '@Html.ActionLink("Delete", "Delete", "Helplists", new {id = -1 })'; //dont work - need id og the helplist-object
+            deleteString = deleteString.replace('-1', assignmentId);
+        
+            var htmlString = "<tr><td>" + user.Name + "</td><td>" + assignment.Title + "</td><td>" + timeNow + "</td><td>" + deleteString + "</td></tr>";
 
             $("#tableBody").append(htmlString);
         }
