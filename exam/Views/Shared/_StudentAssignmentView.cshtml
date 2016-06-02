@@ -35,7 +35,7 @@
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>
-                @Html.RadioButton("Start", "")
+                @Html.RadioButton("Start", @item.ID)
             </td>
             <td>
                 <button class="btn btn-default hideData" value="@item.ID">Done</button>
@@ -81,13 +81,20 @@
         }
 
 
-
         $("#helpBtn").click(function () {
 
             var theUser = $("#User_ID").val();
             console.log(theUser);
 
-           helplistHub.server.addToHelplist(theUser);
+            if (document.getElementById('Start').checked) {
+                var assignmentId = document.getElementById('Start').value;
+                console.log("Id fetched");
+            }
+            else {
+                console.log("ERROR - NO CHECKED VALUE");
+            }
+
+            helplistHub.server.addToHelplist(theUser, assignmentId);
 
         });
 
