@@ -33,18 +33,16 @@
     <script>
         var helplistHub = $.connection.helplistHub;
 
-        $.connection.hub.start().done(function () {
+        $.connection.hub.start().done(function ()
+        {
             console.log("signalR started");
         });
 
-        helplistHub.client.getHelplist = function (user) {
-            console.log(user);
-        }
-
-        /*helplistHub.client.getHelplist = function (user, assignment)
+        helplistHub.client.getHelplist = function (user, assignment)
         {
             console.log(user);
-        }*/
+            console.log(assignment);
+        }
 
     </script>
 }

@@ -42,7 +42,7 @@ namespace exam.Controllers
         {
             return View();
         }
-
+        */
         //Add to helplist button: 
         // POST: Helplists/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -62,7 +62,7 @@ namespace exam.Controllers
         }
 
         // GET: Helplists/Edit/5
-        public ActionResult Edit(int? id)
+        /*public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -94,7 +94,7 @@ namespace exam.Controllers
 
         // GET: Helplists/Delete/5
         //ADMIN
-        */public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -106,13 +106,10 @@ namespace exam.Controllers
                 return HttpNotFound();
             }
             return View(helplist);
-        }
+        }*/
 
         // POST: Helplists/Delete/5
-        //ADMIN
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Helplist helplist = db.Helplist.Find(id);
             db.Helplist.Remove(helplist);

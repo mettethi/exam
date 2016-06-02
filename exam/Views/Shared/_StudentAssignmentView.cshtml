@@ -3,19 +3,6 @@
 
 <h2>Assignments</h2>
 
-<div id="assignmentCreate"></div>
-<div id="assignmentDetails"></div>
-<div id="assignmentEdit"></div>
-<div id="assignmentDelete"></div>
-
-
-
-@Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
-{
-    UpdateTargetId = "assignmentCreate",
-    InsertionMode = InsertionMode.Replace
-})
-
 <button class="btn btn-default" id="helpBtn">HELP</button>
 <table class="table">
     <thead>
@@ -36,7 +23,7 @@
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>
-                @Html.RadioButton("Start", "")
+                @Html.RadioButton("Start", @item.ID)
             </td>
             <td>
                 <button class="btn btn-default hideData" value="@item.ID">Done</button>
@@ -81,18 +68,23 @@
             console.log("Hello from the server");
         }
 
-
-
-        $("#helpBtn").click(function () {
+        $("#helpBtn").click(function ()
+        {
 
             var theUser = $("#User_ID").val();
             console.log(theUser);
 
-            var value = $("#start").val();
-            console.log("the value:");
-            console.log(value);
+            if (document.getElementById('Start').checked)
+            {
+                var assignmentId = document.getElementById('Start').value;
+                console.log("Id fetched");
+            }
+            else
+            {
+                console.log("ERROR - NO CHECKED VALUE");
+            }
 
-           //helplistHub.server.addToHelplist(theUser);
+            helplistHub.server.addToHelplist(theUser, assignmentId);
 
         });
 
