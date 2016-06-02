@@ -22,10 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+.userNameTxt {
+    float: right;
+}
+
+#helpBtn {
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+/*Style below is to float link in menu right*/
+.navbar-nav {
+    float: right !important;
+    margin: 0;
+}
 
 .navbar-inverse { background-color: #5B9EC5 !important; border: none; color: white; }
 .navbar-inverse .navbar-nav > li > a { color: #FFFFFF; font-weight: bold; }
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus { font-weight: bold; background-color: transparent; }
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus { font-weight: bold; text-decoration: underline; background-color: transparent; }
 .navbar-inverse .navbar-brand { color: #FFFFFF; font-weight: bold; }
 
 

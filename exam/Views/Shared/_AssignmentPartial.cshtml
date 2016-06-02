@@ -8,12 +8,16 @@
 <div id="assignmentDelete"></div>
 
 
-
-    @Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
+    @Ajax.ActionLink("Create New Assignment", "CreateAssignmentPartial", new AjaxOptions
     {
         UpdateTargetId = "assignmentCreate",
         InsertionMode = InsertionMode.Replace
+        
     })
+
+
+
+
 
 
 <table class="table">
@@ -35,6 +39,7 @@
                 <td>@a.Description</td>
                 <td>
                     <button class="btn btn-default">
+                        <i class="fa fa-info" aria-hidden="true"></i>
                         @Ajax.ActionLink("Details", "Details", new { id = a.ID }, new AjaxOptions
                         {
                             UpdateTargetId = "assignmentDetails",
@@ -43,7 +48,7 @@
                     </button>
 
                     <button class="btn btn-default">
-                        
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                         @Ajax.ActionLink("Edit", "Edit", new { id = a.ID }, new AjaxOptions
                         {
                             UpdateTargetId = "assignmentEdit",
@@ -52,7 +57,7 @@
                     </button>
 
                     <button class="btn btn-default">
-
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                         @Ajax.ActionLink("Delete", "Delete", new { id = a.ID }, new AjaxOptions
                         {
                             UpdateTargetId = "assignmentDelete",

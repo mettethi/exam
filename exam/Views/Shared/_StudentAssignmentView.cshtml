@@ -1,9 +1,21 @@
 ﻿@*@model IEnumerable<exam.Models.Assignment> *@
 @model exam.ViewModels.StudentViewModel
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
 
-<h2>Assignments</h2>
+<h3 class="userNameTxt"> Hi @Html.DisplayFor(m => m.User.Name)!</h3>
 
-<button class="btn btn-default" id="helpBtn">HELP</button>
+
+@*@Ajax.ActionLink("Create New", "CreateAssignmentPartial", new AjaxOptions
+{
+    UpdateTargetId = "assignmentCreate",
+    InsertionMode = InsertionMode.Replace
+})*@
+
+<button class="btn btn-danger" id="helpBtn">I NEED HELP</button>
+<br />
+<h4>Choose assignment here </h4>
 <table class="table">
     <thead>
         <tr>
@@ -68,19 +80,17 @@
             console.log("Hello from the server");
         }
 
-        $("#helpBtn").click(function ()
-        {
+
+        $("#helpBtn").click(function () {
 
             var theUser = $("#User_ID").val();
             console.log(theUser);
 
-            if (document.getElementById('Start').checked)
-            {
+            if (document.getElementById('Start').checked) {
                 var assignmentId = document.getElementById('Start').value;
                 console.log("Id fetched");
             }
-            else
-            {
+            else {
                 console.log("ERROR - NO CHECKED VALUE");
             }
 

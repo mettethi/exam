@@ -17,21 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
-                @Html.ActionLink("TEACHER", "Index", "Teachers", new { area = "" }, new { @class = "navbar-brand" })
+
+                <div class="navbar-brand">Student</div>
 
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Assignment", "Index", "Assignments")</li>
-                    <li>@Html.ActionLink("Helplist", "Index", "Helplists")</li>
-                    <li>@Html.ActionLink("Statistic", "Index", "Teachers")</li>
-                    <li>@Html.ActionLink("Student", "Index", "Teachers")</li>
                     <li id="logoutBtn">@Html.ActionLink("Logout", "Login", "Login")</li>
                 </ul>
-                <!-- Partial._LoginPartial will show the login and register in right corner -->
-                @*@Html.Partial("_LoginPartial")*@
-                
             </div>
         </div>
     </div>
@@ -45,7 +38,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
- 
+
 
     <!-- Jeg har tilføjet disse -->
 

@@ -11,12 +11,12 @@ namespace exam.Models
     public class HelplistHub : Hub
     {
         private ApplicationContext db = new ApplicationContext();
-       
 
         public void Hello()
         {
             Clients.All.hello();
         }
+
 
         public void AddToHelplist(int userId, int assignmentId)
         {
@@ -35,5 +35,7 @@ namespace exam.Models
 
             Clients.All.getHelplist(user, assignment);
         }
+
+
     }
 }
