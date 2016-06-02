@@ -50,7 +50,7 @@ namespace exam.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddToHelplist([Bind(Include = "ID, User, Assignment, Helped")] Helplist helplist)
+        public ActionResult AddToHelplist([Bind(Include = "ID, User, Assignment")] Helplist helplist)
         {
             if (ModelState.IsValid)
             {

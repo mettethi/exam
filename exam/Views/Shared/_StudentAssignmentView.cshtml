@@ -38,7 +38,7 @@
                 @Html.RadioButton("Start", @item.ID)
             </td>
             <td>
-                <button class="btn btn-default hideData" value="@item.ID">Done</button>
+                <button class="btn btn-default done" id="done_@item.ID" value="@item.ID">Done</button>
             </td>
 
         </tr>
@@ -81,7 +81,8 @@
         }
 
 
-        $("#helpBtn").click(function () {
+        $("#helpBtn").click(function ()
+        {
 
             var theUser = $("#User_ID").val();
             console.log(theUser);
@@ -95,6 +96,15 @@
             }
 
             helplistHub.server.addToHelplist(theUser, assignmentId);
+
+        });
+
+        $(".done").click(function ()
+        {
+            var assignmentId = $(this).val();
+            console.log(assignmentId);
+
+            helplistHub.server.addToStatistic(assignmentId);
 
         });
 

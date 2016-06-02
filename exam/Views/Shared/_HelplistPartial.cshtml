@@ -7,17 +7,15 @@
         <tr>
             <th>Name </th>
             <th>Assignment title</th>
-            <th>Helped</th>
             <th>Delete</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tableBody">
         @foreach (var h in Model)
         {
             <tr>
                 <td>@h.User.Name</td>
                 <td>@h.Assignment.Title</td>
-                <td>@h.Helped</td>
                 <td>@Html.ActionLink("Delete", "Delete", new { id = h.ID })</td>
             </tr>
         }
@@ -33,23 +31,19 @@
     <script>
         var helplistHub = $.connection.helplistHub;
 
-
-
-        $.connection.hub.start().done(function () {
+        $.connection.hub.start().done(function ()
+        {
             console.log("signalR started");
         });
 
         helplistHub.client.getHelplist = function (user, assignment)
         {
-            console.log(user);
-            console.log(assignment);
-            console.log("test");
-        }
+            //append data
+            var deleteString = '@Html.ActionLink("Delete", "Delete")'; //dont work - need id og the helplist-object
+            var htmlString = "<tr><td>" + user.Name + "</td><td>" + assignment.Title + "</td><td>" + deleteString + "</td></tr>";
 
-        /*helplistHub.client.getHelplist = function (user, assignment)
-        {
-            console.log(user);
-        }*/
+            $("#tableBody").append(htmlString);
+        }
 
     </script>
 }

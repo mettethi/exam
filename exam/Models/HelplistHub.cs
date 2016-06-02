@@ -31,9 +31,48 @@ namespace exam.Models
             help.User = user;
             help.Assignment = assignment;
 
-            controller.AddToHelplist(help);
+            db.Helplist.Add(help);
+            db.SaveChanges();
 
             Clients.All.getHelplist(user, assignment);
+        }
+
+        public void AddToStatistic(int assignmentId)
+        {
+            Statistic statistic = new Statistic();
+            statistic.AssignmentId = assignmentId;
+            statistic.Type = "Done";
+
+            db.Statistics.Add(statistic);
+            db.SaveChanges();
+
+            Assignment assignment = db.Assignments.Find(assignmentId);
+
+            int doneCount = 0;
+
+            foreach(var i in db.Statistics)
+            {
+                if(i.Type.Equals("Done"))
+                {
+                    doneCount++;
+                }
+                else
+                {
+                    doneCount = 100;
+                }
+            }
+
+
+
+            /*int doneCount = db.Statistics.Where(i => i.AssignmentId, i => i.Type == "Done" );
+
+            int doneCount2 = db.Statistics.Where(i => i.AssignmentId, i => Equals(i, "Done")).Count;
+
+            int doneCount3 = db.Statistics.Where(i => i.AssignmentId &&  i.Type == "Done").Count;
+
+            int done = db.Statistics.Where(i => i.AssignmentId);*/
+
+            Clients.All.seeDoneStatistic(doneCount, assignmentId);
         }
 
 

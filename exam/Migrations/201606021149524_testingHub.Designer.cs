@@ -7,13 +7,13 @@ namespace exam.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class editedHelplist : IMigrationMetadata
+    public sealed partial class testingHub : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(editedHelplist));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(testingHub));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605301234266_editedHelplist"; }
+            get { return "201606021149524_testingHub"; }
         }
         
         string IMigrationMetadata.Source
