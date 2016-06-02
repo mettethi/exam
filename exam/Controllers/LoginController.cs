@@ -57,5 +57,10 @@ namespace exam.Controllers
             return View();
 
         }
+
+        public ActionResult Delete(int id)
+        {
+            return RedirectToAction("Delete", "Helplists", id);
+        }
     }
 }

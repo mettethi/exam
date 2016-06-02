@@ -16,12 +16,8 @@ namespace exam.Controllers
         // GET: Statistic
         public ActionResult Index()
         {
-            var statisticViewModel = new StatisticViewModel();
-            List<Assignment> assignments = db.Assignments.ToList();
-
-            statisticViewModel.Assignments = assignments;
-
-            return View("StatisticIndex", statisticViewModel);
+  
+            return View("StatisticIndex", db.Assignments.ToList());
         }
 
 

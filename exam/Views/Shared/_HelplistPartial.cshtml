@@ -16,7 +16,7 @@
             <tr>
                 <td>@h.User.Name</td>
                 <td>@h.Assignment.Title</td>
-                <td>@Html.ActionLink("Delete", "Delete", new { id = h.ID })</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Helplists", new { id = h.ID }, null)</td>
             </tr>
         }
     </tbody>

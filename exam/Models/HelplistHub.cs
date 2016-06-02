@@ -46,9 +46,9 @@ namespace exam.Models
             db.Statistics.Add(statistic);
             db.SaveChanges();
 
-            Assignment assignment = db.Assignments.Find(assignmentId);
+           // Assignment assignment = db.Assignments.Find(assignmentId);
 
-            int doneCount = 0;
+           /* int doneCount = 0;
 
             foreach(var i in db.Statistics)
             {
@@ -58,9 +58,9 @@ namespace exam.Models
                 }
                 else
                 {
-                    doneCount = 100;
+                    //doneCount = 100;
                 }
-            }
+            }*/
 
 
 
@@ -72,7 +72,7 @@ namespace exam.Models
 
             int done = db.Statistics.Where(i => i.AssignmentId);*/
 
-            Clients.All.seeDoneStatistic(doneCount, assignmentId);
+            Clients.All.seeDoneStatistic();
         }
 
 

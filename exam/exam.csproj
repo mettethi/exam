@@ -231,6 +231,18 @@
     <Compile Include="Migrations\201606021149524_testingHub.Designer.cs">
       <DependentUpon>201606021149524_testingHub.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606021257464_editedStatistic.cs" />
+    <Compile Include="Migrations\201606021257464_editedStatistic.Designer.cs">
+      <DependentUpon>201606021257464_editedStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021330560_test db.cs" />
+    <Compile Include="Migrations\201606021330560_test db.Designer.cs">
+      <DependentUpon>201606021330560_test db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021337551_addedFK.cs" />
+    <Compile Include="Migrations\201606021337551_addedFK.Designer.cs">
+      <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignment.cs" />
@@ -343,6 +355,7 @@
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_StudentLayout.cshtml" />
     <Content Include="Views\Statistic\StatisticIndex.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +380,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606021149524_testingHub.resx">
       <DependentUpon>201606021149524_testingHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021257464_editedStatistic.resx">
+      <DependentUpon>201606021257464_editedStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021330560_test db.resx">
+      <DependentUpon>201606021330560_test db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021337551_addedFK.resx">
+      <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
