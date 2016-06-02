@@ -1,0 +1,60 @@
+﻿@model IEnumerable< exam.Models.Assignment>
+
+<h2>Statistics</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+          Done
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @{ 
+                    var done = item.Statistics.Where(i => i.Type == "Done").ToList().Count;
+                }
+            
+                @done
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/StudentAssignmentJs.js"></script>
+   
+     <script>
+ 
+        var statisticHub = $.connection.helplistHub;
+
+        $.connection.hub.start().done(function ()
+        {
+            console.log("signalR started from StatisticIndex");
+        });
+
+        statisticHub.client.seeDoneStatistic = function ()
+        {
+            location.reload();
+        }
+
+    </script>
+}
