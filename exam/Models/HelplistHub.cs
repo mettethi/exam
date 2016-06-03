@@ -30,7 +30,7 @@ namespace exam.Models
             db.Helplist.Add(help);
             db.SaveChanges();
 
-            Clients.All.getHelplist(user, assignment, theTime);
+            Clients.All.getHelplist(user, assignment, theTime, help.ID);
         }
 
         public string SplitTimestamp(string timeNow)

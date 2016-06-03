@@ -36,12 +36,11 @@
             console.log("signalR started");
         });
 
-        helplistHub.client.getHelplist = function (user, assignment, timeNow)
+        helplistHub.client.getHelplist = function (user, assignment, timeNow, helpId)
         {
-            var assignmentId = assignment.ID;
 
-            var deleteString = '@Html.ActionLink("Delete", "Delete", "Helplists", new {id = -1 })'; //dont work - need id og the helplist-object
-            deleteString = deleteString.replace('-1', assignmentId);
+            var deleteString = '@Html.ActionLink("Delete", "Delete", "Helplists", new {id = -1 }, null)'; //dont work - need id og the helplist-object
+            deleteString = deleteString.replace('-1', helpId);
         
             var htmlString = "<tr><td>" + user.Name + "</td><td>" + assignment.Title + "</td><td>" + timeNow + "</td><td>" + deleteString + "</td></tr>";
 
