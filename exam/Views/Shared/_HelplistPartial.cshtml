@@ -33,7 +33,7 @@
 
         $.connection.hub.start().done(function ()
         {
-            console.log("signalR started");
+            console.log("signalR started from helplist partial");
         });
 
         helplistHub.client.getHelplist = function (user, assignment, timeNow, helpId)
