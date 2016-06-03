@@ -19,8 +19,6 @@ namespace exam.Controllers
         public ActionResult Index()
         {
             return View();
-
-            //return View(db.Users.ToList());
         }
 
         // GET: Teachers/Details/5
@@ -30,7 +28,6 @@ namespace exam.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
 
             User user = db.Users.Find(id); 
             if (user == null)
@@ -93,8 +90,6 @@ namespace exam.Controllers
             }
             return View(user);
         }
-
-        //HVORDAN HÅNDTERE VI DELETE?
 
         // GET: Teachers/Delete/5    
         public ActionResult Delete(int? id)

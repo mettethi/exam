@@ -9,7 +9,6 @@ namespace exam.Models
     public class Helplist
     {
 
-
         public int ID { get; set; }
 
         [ForeignKey("User")]
@@ -22,12 +21,5 @@ namespace exam.Models
         
         public string Time { get; set; }
         
-        /*public bool Helped { get; set; }
-
-        public Helplist()
-        {
-
-        }*/
-
     }
 }

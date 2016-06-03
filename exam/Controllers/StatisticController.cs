@@ -16,11 +16,7 @@ namespace exam.Controllers
         // GET: Statistic
         public ActionResult Index()
         {
-  
             return View("StatisticIndex", db.Assignments.ToList());
         }
-
-
-
     }
 }

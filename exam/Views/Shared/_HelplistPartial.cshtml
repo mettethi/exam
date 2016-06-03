@@ -39,7 +39,7 @@
         helplistHub.client.getHelplist = function (user, assignment, timeNow, helpId)
         {
 
-            var deleteString = '@Html.ActionLink("Delete", "Delete", "Helplists", new {id = -1 }, null)'; //dont work - need id og the helplist-object
+            var deleteString = '@Html.ActionLink("Delete", "Delete", "Helplists", new {id = -1 }, null)'; 
             deleteString = deleteString.replace('-1', helpId);
         
             var htmlString = "<tr><td>" + user.Name + "</td><td>" + assignment.Title + "</td><td>" + timeNow + "</td><td>" + deleteString + "</td></tr>";

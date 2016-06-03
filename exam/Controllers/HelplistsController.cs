@@ -18,35 +18,8 @@ namespace exam.Controllers
         // GET: Helplists
         public ActionResult Index()
         {
-            // return View(db.Helplist.ToList());
             return View();
         }
-
-        // GET: Helplists/Details/5
-        /*public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Helplist helplist = db.Helplist.Find(id);
-            if (helplist == null)
-            {
-                return HttpNotFound();
-            }
-            return View(helplist);
-        }
-
-        // GET: Helplists/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-        */
-        //Add to helplist button: 
-        // POST: Helplists/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -61,55 +34,7 @@ namespace exam.Controllers
 
             return View(helplist);
         }
-        
-        /*
-
-        // GET: Helplists/Edit/5
-        /*public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Helplist helplist = db.Helplist.Find(id);
-            if (helplist == null)
-            {
-                return HttpNotFound();
-            }
-            return View(helplist);
-        }
-
-        // POST: Helplists/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Helped")] Helplist helplist)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(helplist).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(helplist);
-        }
-
-        // GET: Helplists/Delete/5
-        //ADMIN
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Helplist helplist = db.Helplist.Find(id);
-            if (helplist == null)
-            {
-                return HttpNotFound();
-            }
-            return View(helplist);
-        }*/
+       
 
         // POST: Helplists/Delete/5
         public ActionResult Delete(int id)

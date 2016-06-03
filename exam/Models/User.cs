@@ -17,10 +17,6 @@ namespace exam.Models
       
         public UserType UserType { get; set; }
 
-       /* public abstract void AddUser();
-        public abstract void EditUser();
-        public abstract void DeleteUser();*/
-
     }
 
 }
