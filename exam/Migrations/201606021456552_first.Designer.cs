@@ -13,7 +13,7 @@ namespace exam.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605301437175_first"; }
+            get { return "201606021456552_first"; }
         }
         
         string IMigrationMetadata.Source

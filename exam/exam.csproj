@@ -210,33 +210,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605301437175_first.cs" />
-    <Compile Include="Migrations\201605301437175_first.Designer.cs">
-      <DependentUpon>201605301437175_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021056318_updatedModel.cs" />
-    <Compile Include="Migrations\201606021056318_updatedModel.Designer.cs">
-      <DependentUpon>201606021056318_updatedModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021120153_statModel.cs" />
-    <Compile Include="Migrations\201606021120153_statModel.Designer.cs">
-      <DependentUpon>201606021120153_statModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021149524_testingHub.cs" />
-    <Compile Include="Migrations\201606021149524_testingHub.Designer.cs">
-      <DependentUpon>201606021149524_testingHub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021257464_editedStatistic.cs" />
-    <Compile Include="Migrations\201606021257464_editedStatistic.Designer.cs">
-      <DependentUpon>201606021257464_editedStatistic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021330560_test db.cs" />
-    <Compile Include="Migrations\201606021330560_test db.Designer.cs">
-      <DependentUpon>201606021330560_test db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606021337551_addedFK.cs" />
-    <Compile Include="Migrations\201606021337551_addedFK.Designer.cs">
-      <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
+    <Compile Include="Migrations\201606021456552_first.cs" />
+    <Compile Include="Migrations\201606021456552_first.Designer.cs">
+      <DependentUpon>201606021456552_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201606021647302_addedTimestamp.cs" />
     <Compile Include="Migrations\201606021647302_addedTimestamp.Designer.cs">
@@ -346,26 +322,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605301437175_first.resx">
-      <DependentUpon>201605301437175_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021056318_updatedModel.resx">
-      <DependentUpon>201606021056318_updatedModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021120153_statModel.resx">
-      <DependentUpon>201606021120153_statModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021149524_testingHub.resx">
-      <DependentUpon>201606021149524_testingHub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021257464_editedStatistic.resx">
-      <DependentUpon>201606021257464_editedStatistic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021330560_test db.resx">
-      <DependentUpon>201606021330560_test db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606021337551_addedFK.resx">
-      <DependentUpon>201606021337551_addedFK.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606021456552_first.resx">
+      <DependentUpon>201606021456552_first.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606021647302_addedTimestamp.resx">
       <DependentUpon>201606021647302_addedTimestamp.cs</DependentUpon>

@@ -18,19 +18,30 @@ namespace exam.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Statistics",
+                c => new
+                    {
+                        StatisticId = c.Int(nullable: false, identity: true),
+                        AssignmentId = c.Int(nullable: false),
+                        Type = c.String(),
+                    })
+                .PrimaryKey(t => t.StatisticId)
+                .ForeignKey("dbo.Assignments", t => t.AssignmentId, cascadeDelete: true)
+                .Index(t => t.AssignmentId);
+            
+            CreateTable(
                 "dbo.Helplists",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Helped = c.Boolean(nullable: false),
-                        Assignment_ID = c.Int(),
-                        User_ID = c.Int(),
+                        UserID = c.Int(nullable: false),
+                        AssignmentID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Assignments", t => t.Assignment_ID)
-                .ForeignKey("dbo.Users", t => t.User_ID)
-                .Index(t => t.Assignment_ID)
-                .Index(t => t.User_ID);
+                .ForeignKey("dbo.Assignments", t => t.AssignmentID, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
+                .Index(t => t.UserID)
+                .Index(t => t.AssignmentID);
             
             CreateTable(
                 "dbo.Users",
@@ -48,12 +59,15 @@ namespace exam.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Helplists", "User_ID", "dbo.Users");
-            DropForeignKey("dbo.Helplists", "Assignment_ID", "dbo.Assignments");
-            DropIndex("dbo.Helplists", new[] { "User_ID" });
-            DropIndex("dbo.Helplists", new[] { "Assignment_ID" });
+            DropForeignKey("dbo.Helplists", "UserID", "dbo.Users");
+            DropForeignKey("dbo.Helplists", "AssignmentID", "dbo.Assignments");
+            DropForeignKey("dbo.Statistics", "AssignmentId", "dbo.Assignments");
+            DropIndex("dbo.Helplists", new[] { "AssignmentID" });
+            DropIndex("dbo.Helplists", new[] { "UserID" });
+            DropIndex("dbo.Statistics", new[] { "AssignmentId" });
             DropTable("dbo.Users");
             DropTable("dbo.Helplists");
+            DropTable("dbo.Statistics");
             DropTable("dbo.Assignments");
         }
     }
