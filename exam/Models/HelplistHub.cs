@@ -12,29 +12,36 @@ namespace exam.Models
     {
         private ApplicationContext db = new ApplicationContext();
 
-        public void Hello()
-        {
-            Clients.All.hello();
-        }
-
-
         public void AddToHelplist(int userId, int assignmentId)
         {
-            //gå i db og find user
-            // User user = new User { ID = userId, Name = "MetteLisa" };
-
             User user = db.Users.Find(userId);
             Assignment assignment = db.Assignments.Find(assignmentId);
             HelplistsController controller = new HelplistsController();
 
+            DateTime timeNow = DateTime.Now;
+            var stringTime = timeNow.ToString();
+            var theTime = SplitTimestamp(stringTime);
+
             Helplist help = new Helplist();
             help.User = user;
             help.Assignment = assignment;
+            help.Time = theTime;
 
             db.Helplist.Add(help);
             db.SaveChanges();
 
-            Clients.All.getHelplist(user, assignment);
+            Clients.All.getHelplist(user, assignment, theTime, help.ID);
+        }
+
+        public string SplitTimestamp(string timeNow)
+        {
+            string[] firstSplit = timeNow.Split(' ');
+            var reduced = firstSplit[1];
+            string[] hourMinute = reduced.Split(':');
+
+            var finalTime = hourMinute[0] + ":" + hourMinute[1];
+           
+            return finalTime;
         }
 
         public void AddToStatistic(int assignmentId)
@@ -46,35 +53,8 @@ namespace exam.Models
             db.Statistics.Add(statistic);
             db.SaveChanges();
 
-           // Assignment assignment = db.Assignments.Find(assignmentId);
-
-           /* int doneCount = 0;
-
-            foreach(var i in db.Statistics)
-            {
-                if(i.Type.Equals("Done"))
-                {
-                    doneCount++;
-                }
-                else
-                {
-                    //doneCount = 100;
-                }
-            }*/
-
-
-
-            /*int doneCount = db.Statistics.Where(i => i.AssignmentId, i => i.Type == "Done" );
-
-            int doneCount2 = db.Statistics.Where(i => i.AssignmentId, i => Equals(i, "Done")).Count;
-
-            int doneCount3 = db.Statistics.Where(i => i.AssignmentId &&  i.Type == "Done").Count;
-
-            int done = db.Statistics.Where(i => i.AssignmentId);*/
-
             Clients.All.seeDoneStatistic();
         }
-
 
     }
 }
